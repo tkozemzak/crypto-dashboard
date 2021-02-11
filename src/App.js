@@ -95,7 +95,7 @@ function App() {
     };
   }, [pair]);
 
-  const handleSelect = (e) => {
+  const handleSelectPair = (e) => {
     let unsubMsg = {
       type: "unsubscribe",
       product_ids: [pair],
@@ -108,10 +108,12 @@ function App() {
     setPair(e.target.value);
   };
 
+  const handleSelectTime = (e) => {};
+
   return (
     <div className="container">
       {
-        <select name="currency" value={pair} onChange={handleSelect}>
+        <select name="currency" value={pair} onChange={handleSelectPair}>
           {currencies.map((cur, idx) => {
             return (
               <option key={idx} value={cur.id}>
@@ -122,7 +124,7 @@ function App() {
         </select>
       }
       {
-        <select name="time" value={pair} onChange={handleSelect}>
+        <select name="time" value={pair} onChange={handleSelectTime}>
           {timeOpts.map((range, idx) => {
             return (
               <option key={idx} value={range}>
