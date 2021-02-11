@@ -10,6 +10,17 @@ function App() {
   const [pastData, setPastData] = useState({});
   const ws = useRef(null);
 
+  const timeOpts = [
+    "Today",
+    "1 Week",
+    "1 Month",
+    "3 Months",
+    "6 Months",
+    "1 Year",
+    "2 Years",
+    "5 Years",
+  ];
+
   let first = useRef(false);
   const url = "https://api.pro.coinbase.com";
 
@@ -105,6 +116,17 @@ function App() {
             return (
               <option key={idx} value={cur.id}>
                 {cur.display_name}
+              </option>
+            );
+          })}
+        </select>
+      }
+      {
+        <select name="time" value={pair} onChange={handleSelect}>
+          {timeOpts.map((range, idx) => {
+            return (
+              <option key={idx} value={range}>
+                {range}
               </option>
             );
           })}

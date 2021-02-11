@@ -10,8 +10,11 @@
   align-items: center;
   height: 80vh;
 }
-
 .chart-container {
   width: 80%;
   height: 100%;
+}
+.price-header {
+  width: 5vw;
+  margin-left: -3vw;
 }
